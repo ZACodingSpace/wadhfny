@@ -410,6 +410,7 @@ body {
 .companies-section * {
     z-index: 1;
 }
+
 .companies-section .section-title h2::before {
     content: "تثق في منصة وظفني";
 }
@@ -758,6 +759,13 @@ body {
 
 .statistics-section .statistics-container .statistics .stat-info .stat-num::before {
     content: "+";
+}
+
+.statistics-section .statistics-container .statistics .stat-info .stat-num::after {
+    content: " ألف";
+}
+.statistics-section .statistics-container .companies .stat-info .stat-num::after {
+    content: "";
 }
 
 

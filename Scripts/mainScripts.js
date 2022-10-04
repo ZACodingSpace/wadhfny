@@ -42,47 +42,34 @@ function display_state(new_state) {
 
 
 // Statistics Section Scribts Start
-const counters = document.querySelectorAll('.stat-num');
-const speed = 50; // The lower the slower
+let elements = document.querySelectorAll(".statistics-section .stat-num");
 let statistics_section = document.querySelector(".statistics-section");
 let started = false;
 
-console.log(statistics_section.offsetTop);
-
 window.onscroll = function () {
-
-    // Stats Increase Number
+    console.log("1");
     if (window.scrollY >= (statistics_section.offsetTop - 250)) {
-
+        console.log("2");
+        
         if (!started) {
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-goal');
-                    const count = +counter.innerText;
-
-                    // Lower inc to slow and higher to slow
-                    const inc = target / speed;
-
-                    console.log(inc);
-                    // console.log(count);
-
-                    // Check if target is reached
-                    if (count < target) {
-                        // Add inc to count and output in counter
-                        counter.innerText = count + inc;
-                        // Call function every ms
-                        setTimeout(updateCount, 100);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-
-                updateCount();
-            });
+            console.log("3");
+            elements.forEach((num) => counter(num));
+            
         }
         started = true;
     }
 };
+
+function counter(element) {
+    console.log("4");
+    let goal = element.dataset.goal;
+    let count = setInterval(() => {
+        element.textContent++;
+        if (element.textContent == goal) {
+            clearInterval(count);
+        }
+    }, 2000 / goal);
+}
 
 // Statistics Section Scribts Start
 
