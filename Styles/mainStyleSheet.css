@@ -29,6 +29,34 @@ body {
     background-color: var(--page-background-color);
 }
 
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 2rem;
+}
+
+.section-title h2 {
+    position: relative;
+    color: var(--secondary-color);
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.section-title h2::before {
+    /* content: "تثق في منصة وظفني"; */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--main-color);
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
 /********** General Styles Ends **********/
 
 
@@ -195,7 +223,7 @@ body {
 }
 
 @media (max-width: 1199px) {
-    
+
     .landing-section {
         padding: 1rem 2rem;
     }
@@ -203,7 +231,7 @@ body {
 
 @media (max-width: 991px),
 (orientation: portrait) {
-    
+
     .landing-section {
         padding: 4rem 2rem 2rem;
         grid-template-columns: 1fr;
@@ -382,6 +410,9 @@ body {
 .companies-section * {
     z-index: 1;
 }
+.companies-section .section-title h2::before {
+    content: "تثق في منصة وظفني";
+}
 
 .companies-section .companies-container {
 
@@ -482,6 +513,14 @@ body {
     .steps-section .steps-container {
         grid-template-columns: 1fr;
     }
+}
+
+.steps-section .section-title h2 {
+    color: var(--shadow-color-2);
+}
+
+.steps-section .section-title h2::before {
+    content: "توظيف متكاملة";
 }
 
 .steps-section .steps-container .step {
@@ -620,6 +659,10 @@ body {
     .statistics-section .statistics-container {
         grid-template-columns: 1fr;
     }
+}
+
+.statistics-section .section-title h2::before {
+    content: "يفخر بها فريق منصة وظفني";
 }
 
 .statistics-section .statistics-container .statistics {
