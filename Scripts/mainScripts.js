@@ -1,16 +1,16 @@
-// The Slide-up for Sections Titles Start
+// The Entry Animation for Elements Start
 let sections_titles = document.querySelectorAll(".slide-up");
 let contents_elements = document.querySelectorAll(".slide-in");
 let appearing_way = {
     // threshhold: 1,
     rootMargin: "0px 0px -100px 0px"
 };
-let appear_on_scroll = new IntersectionObserver(function(elements, appear_on_scroll) {
+let appear_on_scroll = new IntersectionObserver(function (elements, appear_on_scroll) {
 
     elements.forEach(element => {
-        if(!element.isIntersecting){
+        if (!element.isIntersecting) {
             return;
-        }else{
+        } else {
             element.target.classList.add("appear");
             appear_on_scroll.unobserve(element.target);
         }
@@ -23,7 +23,7 @@ sections_titles.forEach(title => {
 contents_elements.forEach(content_el => {
     appear_on_scroll.observe(content_el);
 })
-// The slide-up for Sections Titles End
+// The Entry Animation for Elements End
 
 const order_array = [1, 2, 3];
 let accountant_div = document.querySelector(".accountant");
@@ -77,11 +77,11 @@ window.onscroll = function () {
     console.log("1");
     if (window.scrollY >= (statistics_section.offsetTop - 250)) {
         console.log("2");
-        
+
         if (!started) {
             console.log("3");
             elements.forEach((num) => counter(num));
-            
+
         }
         started = true;
     }
