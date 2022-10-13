@@ -361,7 +361,7 @@ body {
     padding: 1rem;
 }
 
-/* .landing-section .landing-imgs-container::after {
+.landing-section .landing-imgs-container::after {
 
     content: "";
     position: absolute;
@@ -398,7 +398,7 @@ body {
         width: 110%;
         background-size: 600px;
     }
-} */
+}
 
 .landing-section .landing-imgs-container div {
 
